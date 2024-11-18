@@ -6,9 +6,8 @@ dataset = load_dataset("csv", data_files="train.csv")
 # 查看数据格式
 print(dataset["train"][0])
 
-train_test_split = dataset["train"].train_test_split(test_size=0.2)
-train_dataset = train_test_split["train"]
-test_dataset = train_test_split["test"]
+train_dataset = load_dataset("csv", data_files="train.csv")
+test_dataset = load_dataset("csv", data_files="test.csv")
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
